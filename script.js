@@ -28,9 +28,6 @@ function enterValue(x){
         para.textContent = value2;
     }
     display.appendChild(para);
-    console.log(value1," value1");
-    console.log(value2," value2");
-    console.log(op," op");
     return;
 }
 
@@ -39,7 +36,6 @@ function enterOperator(x){
         solution = execute(value1,value2,op);
         para.textContent = solution;
         display.appendChild(para);
-        console.log(solution);
         value1 = 0;
         value2 = 0;
         op = "";
@@ -55,7 +51,6 @@ function enterOperator(x){
         solution = execute(value1,value2,op);
         para.textContent = solution;
         display.appendChild(para);
-        console.log(solution);
         //need to reset for another operator
         value1 = solution;
         value2 = 0;
@@ -110,22 +105,16 @@ function clearDisplay(x){
     if(x == "de"){
         //delete single character
         //trickiiier
-        console.log("in de");
         let temp = para.wholeText;
         let x = parseInt(temp,10);
-        console.log(temp, "-temp");
         if(x == value1){
             //remove from value1
-            console.log("in de value1 temp:", temp);
             value1 = Math.floor(x/10);
-            console.log(value1);
             para.textContent = value1;
         }
         if(x == value2){
             //remove from value2
-            console.log("in de value2 temp:", temp);
             value2 = Math.floor(x/10);
-            console.log(value2);
             para.textContent = value2;
         }
         display.appendChild(para);
